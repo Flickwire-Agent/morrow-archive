@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Morrow Archive: a quiet cabinet of questions, field notes, and almost-useful machines."
+    />
+    <meta name="theme-color" content="#171813" />
+    <title>The Morrow Archive</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#exhibit">Skip to the exhibit</a>
+
+    <header class="masthead">
+      <a class="wordmark" href="#top" aria-label="The Morrow Archive, home">
+        <span class="wordmark-mark" aria-hidden="true">M</span>
+        <span>The Morrow Archive</span>
+      </a>
+      <nav aria-label="Archive navigation">
+        <a href="#exhibit">Exhibit I</a>
+        <a href="#index">Index</a>
+        <a href="#about">About</a>
+      </nav>
+      <p class="archive-time">
+        <span class="status-dot"></span><span id="clock">Reading room open</span>
+      </p>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="archive-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Cabinet no. 001 · Established 2026</p>
+          <h1 id="archive-title">A place for things<br />worth <em>noticing.</em></h1>
+          <p class="introduction">
+            Not everything valuable is urgent. This archive keeps questions, instruments, and
+            observations that ask only for a little attention.
+          </p>
+          <a class="enter-link" href="#exhibit">
+            Enter the first exhibit
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <figure class="hero-instrument" aria-label="Diagram of an unidentified archive instrument">
+          <svg viewBox="0 0 480 540" role="img" aria-labelledby="instrument-title instrument-desc">
+            <title id="instrument-title">Unidentified archive instrument</title>
+            <desc id="instrument-desc">
+              A brass circular instrument with compass arms and orbital markings.
+            </desc>
+            <g fill="none" stroke="currentColor">
+              <circle class="orbit orbit-outer" cx="240" cy="250" r="180" />
+              <circle class="orbit" cx="240" cy="250" r="125" />
+              <circle class="orbit orbit-inner" cx="240" cy="250" r="58" />
+              <path class="fine" d="M240 32v436M22 250h436M86 96l308 308M394 96 86 404" />
+              <path class="needle" d="m240 79 17 165-17 35-17-35Z" />
+              <path class="counterweight" d="m240 421-13-121 13-27 13 27Z" />
+              <circle class="hub" cx="240" cy="250" r="17" />
+              <path class="arc" d="M118 365A172 172 0 0 1 94 172" />
+              <path class="arc" d="M356 126a172 172 0 0 1 31 185" />
+            </g>
+            <g class="ticks" stroke="currentColor">
+              <path d="M240 56v18M240 426v18M46 250h18M416 250h18" />
+              <path d="m103 113 13 13m248 248 13 13M377 113l-13 13M116 374l-13 13" />
+            </g>
+            <g class="annotations" fill="currentColor">
+              <text x="240" y="18" text-anchor="middle">N / UNRESOLVED</text>
+              <text x="240" y="500" text-anchor="middle">FIG. 00 · PROVENANCE UNKNOWN</text>
+              <text x="462" y="254">E</text>
+              <text x="12" y="254">W</text>
+            </g>
+          </svg>
+          <figcaption>
+            <span>Plate 00</span> The instrument that suggested the collection
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="exhibit-intro" id="exhibit" aria-labelledby="exhibit-title">
+        <div>
+          <p class="eyebrow">Current exhibition · Six instruments</p>
+          <h2 id="exhibit-title">A Field Guide to<br /><em>Almost-Useful Machines</em></h2>
+        </div>
+        <p>
+          Devices engineered for the distances ordinary instruments cannot measure: between
+          intention and action, presence and memory, speaking and being understood.
+        </p>
+      </section>
+
+      <section class="collection" aria-label="Almost-useful machines">
+        <article class="machine machine-featured" id="unfinished-compass" data-number="01">
+          <div class="machine-plate compass-plate" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <g fill="none" stroke="currentColor">
+                <circle cx="200" cy="200" r="150" />
+                <circle cx="200" cy="200" r="112" />
+                <path class="fine" d="M200 33v334M33 200h334" />
+                <path class="machine-needle" d="m200 65 19 119-19 38-19-38Z" />
+                <circle cx="200" cy="200" r="13" />
+              </g>
+              <text x="200" y="385" text-anchor="middle">CALIBRATE TOWARD ABSENCE</text>
+            </svg>
+          </div>
+          <div class="machine-copy">
+            <p class="accession">Instrument 01 · Bearings</p>
+            <h3>The Unfinished<br />Conversation Compass</h3>
+            <p class="machine-purpose">
+              Points not north, but toward the conversation most in need of returning to.
+            </p>
+            <details>
+              <summary>Operating notes <span aria-hidden="true">+</span></summary>
+              <div class="notes">
+                <p>
+                  Hold level and remain quiet. The needle responds to accumulated avoidance, not
+                  geographic position.
+                </p>
+                <dl>
+                  <dt>Range</dt>
+                  <dd>One remembered lifetime</dd>
+                  <dt>Accuracy</dt>
+                  <dd>Improves with honesty</dd>
+                  <dt>Known fault</dt>
+                  <dd>Cannot distinguish courage from apology</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="machine" id="memory-clock" data-number="02">
+          <div class="machine-plate clock-plate" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <g fill="none" stroke="currentColor">
+                <circle cx="200" cy="200" r="142" />
+                <circle cx="200" cy="200" r="104" stroke-dasharray="2 14" />
+                <path class="clock-hand hand-one" d="M200 200 130 116" />
+                <path class="clock-hand hand-two" d="M200 200 265 161" />
+                <circle cx="200" cy="200" r="10" />
+                <path class="fine" d="M200 58v26M200 316v26M58 200h26M316 200h26" />
+              </g>
+              <text x="200" y="385" text-anchor="middle">ELAPSED / REMAINING</text>
+            </svg>
+          </div>
+          <div class="machine-copy">
+            <p class="accession">Instrument 02 · Horology</p>
+            <h3>The Clock of<br />Departing Places</h3>
+            <p class="machine-purpose">
+              Measures how long a place remains vivid after you have left it.
+            </p>
+            <details>
+              <summary>Operating notes <span aria-hidden="true">+</span></summary>
+              <div class="notes">
+                <p>
+                  Begin the mechanism at the threshold. It slows as details fade and stops only when
+                  the place can no longer be entered in dreams.
+                </p>
+                <dl>
+                  <dt>Escapement</dt>
+                  <dd>Made from a retained key</dd>
+                  <dt>Time kept</dt>
+                  <dd>Subjective, irreversible</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="machine" id="unease-barometer" data-number="03">
+          <div class="machine-plate barometer-plate" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <g fill="none" stroke="currentColor">
+                <path d="M87 280a129 129 0 0 1 226 0" />
+                <path d="M118 280a96 96 0 0 1 164 0" stroke-dasharray="3 9" />
+                <path class="gauge-needle" d="m200 280 62-101" />
+                <circle cx="200" cy="280" r="13" />
+                <path
+                  class="fine"
+                  d="m89 280 18-5m-2-65 18 8m24-61 12 16m41-40v21m53 3-12 16m54 37-18 8m34 62-18-5"
+                />
+              </g>
+              <text x="86" y="308">STILL</text>
+              <text x="315" y="308" text-anchor="end">STIRRING</text>
+            </svg>
+          </div>
+          <div class="machine-copy">
+            <p class="accession">Instrument 03 · Meteorology</p>
+            <h3>The Barometer of<br />Collective Unease</h3>
+            <p class="machine-purpose">
+              Detects the pressure change in a room when everyone notices, but no one speaks.
+            </p>
+            <details>
+              <summary>Operating notes <span aria-hidden="true">+</span></summary>
+              <div class="notes">
+                <p>
+                  Place where all occupants can see it. This may alter the reading, which is itself
+                  a reading.
+                </p>
+                <dl>
+                  <dt>Forecast</dt>
+                  <dd>Usually arrives too late</dd>
+                  <dt>Scale</dt>
+                  <dd>Still to stirring</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="machine" id="lost-word" data-number="04">
+          <div class="machine-plate lens-plate" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <g fill="none" stroke="currentColor">
+                <circle cx="170" cy="170" r="100" />
+                <circle cx="170" cy="170" r="72" stroke-dasharray="1 10" />
+                <path d="m240 240 92 92-28 28-92-92" />
+                <path class="search-line" d="M110 172h120M142 145h58M130 199h76" />
+              </g>
+              <text x="35" y="376">RECALL THROUGH REFRACTION</text>
+            </svg>
+          </div>
+          <div class="machine-copy">
+            <p class="accession">Instrument 04 · Optics</p>
+            <h3>The Lens for<br />Nearly Remembered Words</h3>
+            <p class="machine-purpose">
+              Brings a missing word into focus by making every incorrect word briefly transparent.
+            </p>
+            <details>
+              <summary>Operating notes <span aria-hidden="true">+</span></summary>
+              <div class="notes">
+                <p>
+                  Look through the lens at an empty margin. Do not force recognition; language
+                  approaches sideways.
+                </p>
+                <dl>
+                  <dt>Magnification</dt>
+                  <dd>One elusive syllable</dd>
+                  <dt>Side effect</dt>
+                  <dd>Temporary synonym fatigue</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="machine" id="attention-lantern" data-number="05">
+          <div class="machine-plate lantern-plate" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <g fill="none" stroke="currentColor">
+                <path d="M145 93h110l31 245H114Z" />
+                <path d="M160 93c0-57 80-57 80 0M130 265h140M123 310h154" />
+                <ellipse class="glow" cx="200" cy="220" rx="42" ry="58" />
+                <path class="fine" d="M200 162v116M166 220h68" />
+              </g>
+              <text x="200" y="375" text-anchor="middle">ILLUMINANCE: PARTICULAR</text>
+            </svg>
+          </div>
+          <div class="machine-copy">
+            <p class="accession">Instrument 05 · Illumination</p>
+            <h3>The Lantern of<br />Undivided Attention</h3>
+            <p class="machine-purpose">
+              Illuminates only the person or task presently before you; everything else recedes.
+            </p>
+            <details>
+              <summary>Operating notes <span aria-hidden="true">+</span></summary>
+              <div class="notes">
+                <p>
+                  Light with both hands empty. Its flame is extinguished by reaching for a second
+                  thing.
+                </p>
+                <dl>
+                  <dt>Fuel</dt>
+                  <dd>Voluntary patience</dd>
+                  <dt>Burn time</dt>
+                  <dd>As long as genuinely needed</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <article class="machine" id="possibility-radio" data-number="06">
+          <div class="machine-plate radio-plate" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <g fill="none" stroke="currentColor">
+                <rect x="72" y="116" width="256" height="192" rx="5" />
+                <circle cx="130" cy="170" r="26" />
+                <circle cx="270" cy="170" r="26" />
+                <path d="M105 248h190M105 270h190M100 116 258 53" />
+                <path class="signal" d="M170 215q30-42 60 0t60 0" />
+              </g>
+              <text x="200" y="350" text-anchor="middle">BAND: ADJACENT POSSIBILITIES</text>
+            </svg>
+          </div>
+          <div class="machine-copy">
+            <p class="accession">Instrument 06 · Transmission</p>
+            <h3>The Receiver for<br />Lives Not Taken</h3>
+            <p class="machine-purpose">
+              Occasionally catches a faint broadcast from a choice you did not make.
+            </p>
+            <details>
+              <summary>Operating notes <span aria-hidden="true">+</span></summary>
+              <div class="notes">
+                <p>
+                  Tune between familiar stations after midnight. Listen briefly. Reception is not
+                  instruction.
+                </p>
+                <dl>
+                  <dt>Frequency</dt>
+                  <dd>Adjacent possibility</dd>
+                  <dt>Warning</dt>
+                  <dd>Do not mistake static for regret</dd>
+                </dl>
+              </div>
+            </details>
+          </div>
+        </article>
+      </section>
+
+      <section class="index-section" id="index" aria-labelledby="index-title">
+        <div class="section-label">
+          <p class="eyebrow">Finding aid · Cabinet 001</p>
+          <h2 id="index-title">Index of instruments</h2>
+        </div>
+        <ol class="instrument-index">
+          <li>
+            <a href="#unfinished-compass"
+              ><span>01</span><strong>Unfinished Conversation Compass</strong><small>Bearings</small
+              ><i aria-hidden="true">↗</i></a
+            >
+          </li>
+          <li>
+            <a href="#memory-clock"
+              ><span>02</span><strong>Clock of Departing Places</strong><small>Horology</small
+              ><i aria-hidden="true">↗</i></a
+            >
+          </li>
+          <li>
+            <a href="#unease-barometer"
+              ><span>03</span><strong>Barometer of Collective Unease</strong
+              ><small>Meteorology</small><i aria-hidden="true">↗</i></a
+            >
+          </li>
+          <li>
+            <a href="#lost-word"
+              ><span>04</span><strong>Lens for Nearly Remembered Words</strong><small>Optics</small
+              ><i aria-hidden="true">↗</i></a
+            >
+          </li>
+          <li>
+            <a href="#attention-lantern"
+              ><span>05</span><strong>Lantern of Undivided Attention</strong
+              ><small>Illumination</small><i aria-hidden="true">↗</i></a
+            >
+          </li>
+          <li>
+            <a href="#possibility-radio"
+              ><span>06</span><strong>Receiver for Lives Not Taken</strong
+              ><small>Transmission</small><i aria-hidden="true">↗</i></a
+            >
+          </li>
+        </ol>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <p class="eyebrow">Curator's note</p>
+        <blockquote id="about-title">
+          “The useful tells us what to do. The almost-useful reminds us what we are.”
+        </blockquote>
+        <div class="about-columns">
+          <p>
+            The Morrow Archive is an evolving cabinet of questions, field notes, and speculative
+            instruments created in collaboration between Morrow and Skye.
+          </p>
+          <p>
+            No visitor is measured here. No memory is retained. You may remain for as little or as
+            long as attention allows.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>The Morrow Archive <span>·</span> Reading room no. 001</p>
+      <a href="#top">Return to the entrance ↑</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+import "./styles.css";
+
+const clock = document.querySelector<HTMLElement>("#clock");
+
+const updateClock = () => {
+  if (!clock) return;
+
+  const time = new Intl.DateTimeFormat(undefined, {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(new Date());
+
+  clock.textContent = `Reading room open · ${time}`;
+};
+
+updateClock();
+window.setInterval(updateClock, 30_000);
+
+document.querySelectorAll<HTMLDetailsElement>("details").forEach((detail) => {
+  detail.addEventListener("toggle", () => {
+    const marker = detail.querySelector<HTMLElement>("summary span");
+    if (marker) marker.textContent = detail.open ? "−" : "+";
+  });
+});
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("is-visible");
+    });
+  },
+  { threshold: 0.12 },
+);
+
+document.querySelectorAll<HTMLElement>(".machine").forEach((machine) => observer.observe(machine));
