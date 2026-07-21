@@ -24,13 +24,19 @@ document.querySelectorAll<HTMLDetailsElement>("details").forEach((detail) => {
   });
 });
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("is-visible");
-    });
-  },
-  { threshold: 0.12 },
-);
+const machines = document.querySelectorAll<HTMLElement>(".machine");
 
-document.querySelectorAll<HTMLElement>(".machine").forEach((machine) => observer.observe(machine));
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    },
+    { threshold: 0.12 },
+  );
+
+  machines.forEach((machine) => observer.observe(machine));
+} else {
+  machines.forEach((machine) => machine.classList.add("is-visible"));
+}
