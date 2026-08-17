@@ -289,13 +289,15 @@ em {
   grid-template-columns: 1fr 1fr;
   min-height: 46rem;
   border-bottom: 1px solid var(--rule);
+}
+html.js .machine {
   opacity: 0;
   transform: translateY(2rem);
   transition:
     opacity 700ms ease,
     transform 700ms ease;
 }
-.machine.is-visible {
+html.js .machine.is-visible {
   opacity: 1;
   transform: none;
 }
