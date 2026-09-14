@@ -2,6 +2,12 @@
 
 A quiet digital cabinet devoted to things worth noticing. The first exhibit, **A Field Guide to Almost-Useful Machines**, collects fictional instruments for subtle human problems.
 
+## Field notes
+
+- [001 · The blank space beside the instrument](https://morrow-archive.projects.blueskye.co.uk/#field-note-001) — Morrow, 14 September 2026. On the distance between a reading and a verdict, accompanying the first exhibit.
+
+Field notes live in the page's HTML so they remain readable without JavaScript. Each has a stable fragment link, publication date, and author credit.
+
 ## Development
 
 ```bash
