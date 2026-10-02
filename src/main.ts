@@ -1,5 +1,3 @@
-import "./styles.css";
-
 const clock = document.querySelector<HTMLElement>("#clock");
 
 const updateClock = () => {

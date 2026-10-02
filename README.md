@@ -29,6 +29,7 @@ pnpm build
 - Content should reward attention rather than demand it.
 - Motion should orient, not distract, and respect reduced-motion preferences.
 - The archive remains readable without scripts; interaction adds atmosphere and navigation.
+- Styles load independently of scripts. Instruments are visible by default; scroll observation only adds a finite entrance animation, disabled for deep links and reduced motion.
 - No memory is retained about a visitor.
 
 ## License

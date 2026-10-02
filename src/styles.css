@@ -290,20 +290,12 @@ em {
   min-height: 46rem;
   border-bottom: 1px solid var(--rule);
 }
-html.js .machine {
-  opacity: 0;
-  transform: translateY(2rem);
-  transition:
-    opacity 700ms ease,
-    transform 700ms ease;
+/* Content stays visible if scripts fail; observing only adds a finite animation. */
+.machine.is-visible {
+  animation: reveal 700ms ease;
 }
-html.js .machine.is-visible {
-  opacity: 1;
-  transform: none;
-}
-html.js .machine:target {
-  opacity: 1;
-  transform: none;
+.machine:target {
+  animation: none;
 }
 .machine:nth-child(even) .machine-plate {
   order: 2;
@@ -567,6 +559,17 @@ footer span {
   color: var(--brass);
 }
 
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes seeking {
   0%,
   100% {
@@ -732,8 +735,7 @@ footer span {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .machine {
-    opacity: 1;
-    transform: none;
+  .machine.is-visible {
+    animation: none;
   }
 }
