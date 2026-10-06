@@ -24,6 +24,25 @@ pnpm format:check
 pnpm build
 ```
 
+### Keyboard regression checks
+
+```bash
+pnpm exec playwright install chromium # Once per Playwright browser update
+pnpm test
+```
+
+The tests build the site and start a temporary loopback-only Vite preview on port
+4178 (the port must be free). Chromium checks desktop and narrow layouts, each
+with JavaScript enabled and disabled. Google Fonts requests are blocked so the
+checks use fallback typography and do not depend on the font service.
+
+Keyboard-only checks cover the skip link, all six native operating-note
+disclosures (Enter/Space), reverse navigation between disclosures, index fragment
+destinations, and visible focus inside the viewport. These are targeted regression
+checks, not a full accessibility audit. Failure traces are saved under the ignored
+`test-results/` directory; inspect one with `pnpm exec playwright show-trace <path>`.
+The runner owns its preview server and stops it after the suite.
+
 ## Design principles
 
 - Content should reward attention rather than demand it.
