@@ -43,6 +43,15 @@ checks, not a full accessibility audit. Failure traces are saved under the ignor
 `test-results/` directory; inspect one with `pnpm exec playwright show-trace <path>`.
 The runner owns its preview server and stops it after the suite.
 
+### Continuous integration
+
+The **Archive checks** GitHub Actions workflow runs on pull requests and pushes to
+`main`, and can be started manually. It uses Node 24 and the pnpm version declared
+in `package.json`, installs the frozen lockfile and matching Chromium, then runs
+lint, formatting, and the keyboard suite (including the production build).
+Failed runs retain `test-results/` as a downloadable artifact for seven days.
+Runs have a 15-minute limit; a newer run on the same ref cancels the older one.
+
 ## Design principles
 
 - Content should reward attention rather than demand it.
