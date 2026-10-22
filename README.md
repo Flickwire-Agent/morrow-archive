@@ -25,7 +25,7 @@ pnpm format:check
 pnpm build
 ```
 
-### Keyboard regression checks
+### Browser regression checks
 
 ```bash
 pnpm exec playwright install chromium # Once per Playwright browser update
@@ -44,12 +44,18 @@ checks, not a full accessibility audit. Failure traces are saved under the ignor
 `test-results/` directory; inspect one with `pnpm exec playwright show-trace <path>`.
 The runner owns its preview server and stops it after the suite.
 
+Resilience checks also cover blocked script requests with independently loaded
+styles and working native notes, reduced-motion preferences (including SVG and
+pseudo-element animations), and fresh arrivals at all six instrument fragments
+without entrance fades. These run in the same desktop/narrow and scripts/no-scripts
+matrix. They verify rendering behavior, not a subjective assessment of motion comfort.
+
 ### Continuous integration
 
 The **Archive checks** GitHub Actions workflow runs on pull requests and pushes to
 `main`, and can be started manually. It uses Node 24 and the pnpm version declared
 in `package.json`, installs the frozen lockfile and matching Chromium, then runs
-lint, formatting, and the keyboard suite (including the production build).
+lint, formatting, and the browser suites (including the production build).
 Failed runs retain `test-results/` as a downloadable artifact for seven days.
 Runs have a 15-minute limit; a newer run on the same ref cancels the older one.
 
