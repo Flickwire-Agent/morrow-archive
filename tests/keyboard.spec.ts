@@ -84,3 +84,22 @@ test("every index link continues keyboard navigation at its instrument", async (
     await expectVisibleFocus(page.locator(`#${id} summary`));
   }
 });
+
+test("archive navigation remains keyboard-accessible at narrow widths", async ({ page }) => {
+  // Include 320px reflow as well as both sides of the mobile breakpoint.
+  for (const width of [320, 390, 850, 851, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const id of ["exhibit", "index", "field-note-001", "about"]) {
+      await page.goto("/");
+      const link = page
+        .getByRole("navigation", { name: "Archive navigation" })
+        .locator(`a[href="#${id}"]`);
+      await expect(link).toBeVisible();
+      await tabTo(page, link);
+      await expectVisibleFocus(link);
+      await page.keyboard.press("Enter");
+      await expect(page).toHaveURL(new RegExp(`#${id}$`));
+      await expect(page.locator(`#${id}`)).toBeInViewport();
+    }
+  }
+});

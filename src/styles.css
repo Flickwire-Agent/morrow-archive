@@ -632,11 +632,18 @@ footer span {
   .masthead {
     grid-template-columns: 1fr auto;
     min-height: 5rem;
+    padding: 1.25rem 0;
+    row-gap: 1.25rem;
   }
   .masthead nav {
-    display: none;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
   }
   .archive-time {
+    grid-row: 1;
+    grid-column: 2;
     font-size: 0;
   }
   .status-dot {

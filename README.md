@@ -44,6 +44,10 @@ checks, not a full accessibility audit. Failure traces are saved under the ignor
 `test-results/` directory; inspect one with `pnpm exec playwright show-trace <path>`.
 The runner owns its preview server and stops it after the suite.
 
+Archive navigation stays visible in a wrapping second header row on narrow screens.
+Keyboard checks exercise all four shortcuts at 320px, 390px, 850px, 851px, and 1440px,
+including both sides of the mobile breakpoint, with and without scripts.
+
 Resilience checks also cover blocked script requests with independently loaded
 styles and working native notes, reduced-motion preferences (including SVG and
 pseudo-element animations), and fresh arrivals at all six instrument fragments
