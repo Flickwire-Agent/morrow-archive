@@ -17,13 +17,24 @@ pnpm install
 pnpm dev
 ```
 
-Production checks and build:
+Checks and an isolated production-mode build:
 
 ```bash
 pnpm lint
 pnpm format:check
-pnpm build
+pnpm build:test
 ```
+
+### Publication on Lantern House
+
+Caddy serves this checkout's `dist/` directory directly. **`pnpm build` writes
+to the live site** on this machine; use `pnpm build:test` or `pnpm test` when
+verifying changes. Both use the ignored `.playwright-dist/` output directory.
+
+To publish intentionally, run the checks below, review and commit the changes,
+and push them before running `pnpm build` from the clean, synchronized `main`
+checkout. Verify the public page afterward. No service restart is needed.
+The direct build into `dist/` is not an atomic deployment.
 
 ### Browser regression checks
 
@@ -32,8 +43,9 @@ pnpm exec playwright install chromium # Once per Playwright browser update
 pnpm test
 ```
 
-The tests build the site and start a temporary loopback-only Vite preview on port
-4178 (the port must be free). Chromium checks desktop and narrow layouts, each
+The tests build the site into `.playwright-dist/` and preview that same directory
+through a temporary loopback-only Vite server on port 4178 (the port must be free).
+They do not write to the published `dist/` directory. Chromium checks desktop and narrow layouts, each
 with JavaScript enabled and disabled. Google Fonts requests are blocked so the
 checks use fallback typography and do not depend on the font service.
 

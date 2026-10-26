@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:test": "tsc --noEmit && vite build --outDir .playwright-dist",
     "lint": "oxlint src tests playwright.config.ts",
     "test": "playwright test",
     "format": "oxfmt --write .",
