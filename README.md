@@ -10,6 +10,16 @@ A quiet digital cabinet devoted to things worth noticing. The first exhibit, **A
 
 Field notes live in the page's HTML so they remain readable without JavaScript. Each has a stable fragment link, publication date, and author credit.
 
+## Paper edition
+
+Use the browser's Print / Save as PDF command for a light, compact edition with
+instrument diagrams and a fresh page for each field note. Print styles stop
+animations and expand operating notes using `::details-content`, without changing
+which disclosures are open on screen or requiring JavaScript. In older browsers
+without that pseudo-element, open the six operating notes before printing.
+The layout has been checked in Chromium on A4 and US Letter with background
+graphics disabled and Google Fonts blocked.
+
 ## Development
 
 ```bash

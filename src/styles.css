@@ -746,3 +746,207 @@ footer span {
     animation: none;
   }
 }
+
+@media print {
+  @page {
+    margin: 16mm;
+  }
+
+  :root {
+    color-scheme: light;
+    --ink: #171813;
+    --dim: #383930;
+    --paper: #fff;
+    --paper-deep: #fff;
+    --rule: #aaa;
+    --brass: #514022;
+    --brass-pale: #514022;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+  }
+
+  body {
+    background: white;
+    font-size: 10pt;
+    line-height: 1.5;
+  }
+
+  body::before,
+  .skip-link,
+  .masthead nav,
+  .archive-time,
+  .enter-link,
+  summary span,
+  footer a,
+  .instrument-index i {
+    display: none;
+  }
+
+  .masthead,
+  footer {
+    display: block;
+    min-height: 0;
+    margin: 0;
+    padding: 8pt 0;
+  }
+
+  .hero,
+  .exhibit-intro,
+  .section-label,
+  .about-columns {
+    display: block;
+  }
+
+  .hero,
+  .exhibit-intro,
+  .index-section,
+  .field-note,
+  .about {
+    min-height: 0;
+    padding: 20pt 0;
+    background: white;
+  }
+
+  h1 {
+    font-size: 32pt;
+  }
+
+  .exhibit-intro h2,
+  .section-label h2,
+  .field-note h2,
+  .about blockquote {
+    font-size: 24pt;
+  }
+
+  h1,
+  h2,
+  h3,
+  .eyebrow,
+  .accession {
+    break-after: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .eyebrow,
+  .accession,
+  .section-label {
+    margin-bottom: 12pt;
+  }
+
+  .introduction,
+  .machine-purpose,
+  .field-note-copy,
+  .about-columns {
+    max-width: none;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+
+  .exhibit-intro > p {
+    margin-top: 12pt;
+    font-size: 10pt;
+  }
+
+  .hero-instrument {
+    width: 150pt;
+    margin: 16pt auto 0;
+    break-inside: avoid;
+  }
+
+  .hero-instrument figcaption {
+    display: block;
+  }
+
+  .hero-instrument figcaption span {
+    margin-right: 6pt;
+    white-space: nowrap;
+  }
+
+  .index-section,
+  .about,
+  footer {
+    break-inside: avoid;
+  }
+
+  .machine {
+    grid-template-columns: 140pt 1fr;
+    gap: 18pt;
+    min-height: 0;
+    padding: 20pt 0;
+    break-inside: avoid;
+  }
+
+  .machine-plate,
+  .machine:nth-child(even) .machine-plate {
+    order: 0;
+    min-height: 0;
+    border: 0;
+    overflow: visible;
+  }
+
+  .machine-plate svg {
+    width: 100%;
+  }
+
+  .machine-copy {
+    display: block;
+    padding: 0;
+  }
+
+  .machine h3 {
+    font-size: 22pt;
+  }
+
+  /* Reveal native disclosures on paper without changing their screen state. */
+  details::details-content {
+    content-visibility: visible;
+    display: block;
+  }
+
+  summary {
+    padding: 8pt 0;
+  }
+
+  .notes {
+    font-size: 9pt;
+    padding-bottom: 8pt;
+  }
+
+  .notes dl {
+    margin-top: 8pt;
+  }
+
+  .instrument-index a {
+    grid-template-columns: 24pt 1fr 100pt;
+    gap: 8pt;
+    padding: 8pt 0;
+    break-inside: avoid;
+  }
+
+  .instrument-index small {
+    display: block;
+  }
+
+  .instrument-index strong {
+    font-size: 12pt;
+  }
+
+  .field-note {
+    break-before: page;
+  }
+
+  .about {
+    text-align: left;
+  }
+}
