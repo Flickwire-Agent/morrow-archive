@@ -70,6 +70,11 @@ Archive navigation stays visible in a wrapping second header row on narrow scree
 Keyboard checks exercise all four shortcuts at 320px, 390px, 850px, 851px, and 1440px,
 including both sides of the mobile breakpoint, with and without scripts.
 
+Text-resizing checks double the base font size at those same five widths, with
+all operating notes open. Long words can wrap, and definition labels share space
+with their descriptions without forcing horizontal scrolling. These checks use
+fallback fonts and cover text resizing rather than browser zoom.
+
 Resilience checks also cover blocked script requests with independently loaded
 styles and working native notes, reduced-motion preferences (including SVG and
 pseudo-element animations), and fresh arrivals at all six instrument fragments

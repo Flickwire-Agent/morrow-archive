@@ -75,3 +75,34 @@ test("direct instrument links bypass entrance fades", async ({ page }) => {
     await expect(instrument).toHaveCSS("animation-name", "none");
   }
 });
+
+test("enlarged text reflows without horizontal scrolling, including open notes", async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  // Model a reader doubling their base text size, not a CSS transform or screenshot zoom.
+  await page.locator("html").evaluate((node) => {
+    node.style.fontSize = "200%";
+  });
+  for (const summary of await page.locator("summary").all()) {
+    await summary.click();
+  }
+  for (const width of [320, 390, 850, 851, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    const layout = await page.evaluate(() => ({
+      viewport: innerWidth,
+      document: document.documentElement.scrollWidth,
+      clipped: Array.from(
+        document.querySelectorAll<HTMLElement>("h1, h2, h3, p, summary, dt, dd, figcaption"),
+      )
+        .filter((node) => node.scrollWidth > node.clientWidth + 1)
+        .map((node) => node.textContent?.trim()),
+    }));
+    expect(layout.document, `document width at ${width}px`).toBeLessThanOrEqual(layout.viewport);
+    expect(layout.clipped, `clipped text at ${width}px`).toEqual([]);
+    for (const notes of await page.locator(".notes").all()) {
+      await expect(notes).toBeVisible();
+    }
+  }
+});

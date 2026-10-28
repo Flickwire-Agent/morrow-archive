@@ -37,6 +37,7 @@ body {
   font-family: var(--sans);
   font-weight: 300;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 body::before {
@@ -383,7 +384,7 @@ summary span {
 }
 .notes dl {
   display: grid;
-  grid-template-columns: 7rem 1fr;
+  grid-template-columns: min(7rem, 35%) minmax(0, 1fr);
   margin: 1.5rem 0 0;
   border-top: 1px solid var(--rule);
 }
