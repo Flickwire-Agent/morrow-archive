@@ -66,6 +66,10 @@ checks, not a full accessibility audit. Failure traces are saved under the ignor
 `test-results/` directory; inspect one with `pnpm exec playwright show-trace <path>`.
 The runner owns its preview server and stops it after the suite.
 
+The decorative +/− indicators follow the native disclosure's `open` attribute
+through CSS, including when scripts are unavailable. Keyboard checks verify the
+indicator on opening and closing every operating note in all four projects.
+
 Archive navigation stays visible in a wrapping second header row on narrow screens.
 Keyboard checks exercise all four shortcuts at 320px, 390px, 850px, 851px, and 1440px,
 including both sides of the mobile breakpoint, with and without scripts.

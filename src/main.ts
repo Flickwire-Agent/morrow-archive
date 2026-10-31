@@ -15,16 +15,6 @@ const updateClock = () => {
 updateClock();
 window.setInterval(updateClock, 30_000);
 
-document.querySelectorAll<HTMLDetailsElement>("details").forEach((detail) => {
-  const updateMarker = () => {
-    const marker = detail.querySelector<HTMLElement>("summary span");
-    if (marker) marker.textContent = detail.open ? "−" : "+";
-  };
-
-  updateMarker();
-  detail.addEventListener("toggle", updateMarker);
-});
-
 const machines = document.querySelectorAll<HTMLElement>(".machine");
 
 if ("IntersectionObserver" in window) {

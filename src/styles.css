@@ -374,6 +374,12 @@ summary span {
   color: var(--brass-pale);
   font-size: 1rem;
 }
+summary span::before {
+  content: "+";
+}
+details[open] > summary span::before {
+  content: "−";
+}
 .notes {
   padding: 0.5rem 0 1.5rem;
   color: var(--dim);

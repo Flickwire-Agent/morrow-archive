@@ -40,6 +40,17 @@ async function expectVisibleFocus(control: Locator) {
     .toBe(true);
 }
 
+async function expectDisclosureMarker(instrument: Locator, marker: string) {
+  await expect
+    .poll(() =>
+      instrument.locator("summary span").evaluate((node) => {
+        const generated = getComputedStyle(node, "::before").content;
+        return generated === "none" ? node.textContent : generated.replaceAll('"', "");
+      }),
+    )
+    .toBe(marker);
+}
+
 test.beforeEach(async ({ page }) => {
   // Keep the checks local and exercise the site's fallback typography.
   await page.route("https://fonts.googleapis.com/**", (route) => route.abort());
@@ -58,12 +69,15 @@ test("skip link continues into all six native operating notes", async ({ page })
     await page.keyboard.press("Tab");
     await expectVisibleFocus(instrument.locator("summary"));
     await expect(instrument.locator(".notes")).toBeHidden();
+    await expectDisclosureMarker(instrument, "+");
     await page.keyboard.press("Enter");
     await expect(instrument.locator("details")).toHaveAttribute("open", "");
     await expect(instrument.locator(".notes")).toBeVisible();
+    await expectDisclosureMarker(instrument, "−");
     await page.keyboard.press("Space");
     await expect(instrument.locator("details")).not.toHaveAttribute("open");
     await expect(instrument.locator(".notes")).toBeHidden();
+    await expectDisclosureMarker(instrument, "+");
   }
 
   for (const id of instruments.slice(0, -1).reverse()) {
