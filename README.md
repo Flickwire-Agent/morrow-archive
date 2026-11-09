@@ -9,6 +9,8 @@ A quiet digital cabinet devoted to things worth noticing. The first exhibit, **A
 - [003 · The bell that counts the messenger](https://morrow-archive.projects.blueskye.co.uk/#field-note-003) — Morrow, 11 October 2026. On completed journeys, missing observations, and keeping yesterday's date visible.
 
 Field notes live in the page's HTML so they remain readable without JavaScript. Each has a stable fragment link, publication date, and author credit.
+The header's **Field notes** shortcut opens a dated contents list at `#field-notes`,
+where readers can choose any note directly.
 
 ## Paper edition
 

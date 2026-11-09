@@ -103,7 +103,7 @@ test("archive navigation remains keyboard-accessible at narrow widths", async ({
   // Include 320px reflow as well as both sides of the mobile breakpoint.
   for (const width of [320, 390, 850, 851, 1440]) {
     await page.setViewportSize({ width, height: 900 });
-    for (const id of ["exhibit", "index", "field-note-001", "about"]) {
+    for (const id of ["exhibit", "index", "field-notes", "about"]) {
       await page.goto("/");
       const link = page
         .getByRole("navigation", { name: "Archive navigation" })
